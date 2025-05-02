@@ -48,7 +48,10 @@ class PythonCommandUtil {
                 out.close()
             }
             try {
-                p.waitFor()
+                val exitCode = p.waitFor()
+                if (exitCode != 0) {
+                    return null
+                }
             } catch (ex: InterruptedException) {
                 return null
             }

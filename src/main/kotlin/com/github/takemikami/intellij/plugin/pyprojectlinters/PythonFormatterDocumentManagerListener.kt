@@ -71,7 +71,7 @@ class PythonFormatterDocumentManagerListener(private val project: Project) : Fil
                         }
                     }
 
-                    if (newBody != null && body != newBody) {
+                    if (newBody != null && newBody != "" && body != newBody) {
                         val output = newBody
                         val bodyLength = body.length
 
